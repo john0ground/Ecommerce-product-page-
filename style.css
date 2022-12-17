@@ -20,4 +20,34 @@ main {
     width: 70vw;
     height: 80%;
     background: #ccc;
+    display: flex;
+    justify-content: center;
+}
+
+.product-container {
+    width: 50%;
+    background-color: aqua;
+}
+
+.info-container {
+    width: 50%;
+}
+
+#image-main {
+    width: 21rem;
+    height: 21rem;
+} 
+
+#image-main > img {
+    width: 100%;
+    height: auto;
+}
+
+.image-group {
+    display: flex;
+}
+
+.thumbnail {
+    width: 4rem;
+    height: 4rem;
 }
