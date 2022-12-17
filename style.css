@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    box-sizing: border-box;
+    height: 100%;
+}
+
+header {
+    width: 75vw;
+    height: 6rem;
+    background: #ccc;
+    margin: 0 auto;
+}
+
+main {
+    margin: 5rem auto;
+    width: 70vw;
+    height: 80%;
+    background: #ccc;
+}
