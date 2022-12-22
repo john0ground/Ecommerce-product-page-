@@ -1,13 +1,12 @@
-const thumbnails = document.querySelectorAll('.thumbnail');
+const thumbnails = document.querySelectorAll('.thumbnail-container');
 thumbnails.forEach((thumbnail) => thumbnail.addEventListener('click', changeImageMain));
 
-let currentEvent;
 function changeImageMain(e) {
     const imageMain = document.getElementById('image-main');
     const newMain = document.createElement('img');
     
-    const imageId = e.target.id;
-    newMain.src = `images/image-product-${imageId}.jpg`;
+    const imageId = e.target.parentElement.id;
+    newMain.src = `images/image-${imageId}.jpg`;
 
     newMain.id = 'image-main';
 
@@ -17,8 +16,13 @@ function changeImageMain(e) {
     overlayAndBorder();
 }
 
+let currentEvent;
 function overlayAndBorder() {
-    console.log(currentEvent);
+    const overlay = document.querySelectorAll('.overlay');
+    overlay.forEach(element => element.classList.remove('select-overlay'));
+
+    const clickedThumbnail = currentEvent.target.parentElement.childNodes[3];
+    clickedThumbnail.classList.add('select-overlay');
 }
 
 

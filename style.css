@@ -105,35 +105,41 @@ main {
     justify-content: space-between;
 }
 
+.thumbnail-container {
+    width: 5.2rem;
+    height: 5.2rem;
+    /* border: 1px solid #000; */
+    position: relative;
+}
+
 .thumbnail {
     width: 5.2rem;
     height: 5.2rem;
-    border-radius: 5px;
-    border: 2px solid hsl(26, 100%, 55%);
+    border-radius: 10px;
+    position: absolute;
 
+    /* to even this position with the .overlay element relative to the container */
+    border: 2px solid transparent; 
 }
 
-.thumbnail:hover {
-    opacity: 0.6;
-    filter: hue-rotate(0deg);
-}
-
-/* .overlay {
+.overlay {
     width: 5.2rem;
     height: 5.2rem;
-    background: rgb(255, 255, 255);
-    border-radius: 5px;
-    position: relative;
-} */
+    background: none;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    position: absolute;
+}
 
-/* .overlay:hover {
+.overlay:hover:not(.select-overlay) {
     cursor: pointer;
-    border: 2px solid hsl(26, 100%, 55%);
-} */
+    background: rgba(255, 255, 255, 0.4);   
+}
 
-/* .select-overlay {
+.select-overlay {
     border: 2px solid hsl(26, 100%, 55%);
-} */
+    background: rgba(255, 255, 255, 0.7);
+}
 
 .info-container {
     width: 26.5rem;
