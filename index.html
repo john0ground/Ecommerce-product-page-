@@ -7,6 +7,8 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
 
+  <script src="script.js" defer></script>
+
   <title>Frontend Mentor | E-commerce product page</title>
 </head>
 
@@ -35,13 +37,15 @@
 
   <main>
     <section class="product-container">
-      <img id ="image-main" src="images/image-product-1.jpg"  >
-
+      <div class="main-image-container">
+        <img id ="image-main" src="images/image-product-1.jpg">
+      </div>
+      
       <div class="thumbnail-group">
-        <img src="images/image-product-1-thumbnail.jpg" id="thumbnail-1" class="thumbnail">
-        <img src="images/image-product-2-thumbnail.jpg" id="thumbnail-2" class="thumbnail"></img>
-        <img src="images/image-product-3-thumbnail.jpg" id="thumbnail-3" class="thumbnail"></img>
-        <img src="images/image-product-4-thumbnail.jpg" id="thumbnail-4" class="thumbnail"></img>
+        <img src="images/image-product-1-thumbnail.jpg" id="1" class="thumbnail">
+        <img src="images/image-product-2-thumbnail.jpg" id="2" class="thumbnail">
+        <img src="images/image-product-3-thumbnail.jpg" id="3" class="thumbnail">
+        <img src="images/image-product-4-thumbnail.jpg" id="4" class="thumbnail"> 
       </div>
     </section>
 
@@ -104,9 +108,11 @@
 
   </div>
   
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>
+      /  Coded by <a href="https://github.com/john0ground">John C</a>
+    </div>
+  </footer>
 </body>
 </html>
