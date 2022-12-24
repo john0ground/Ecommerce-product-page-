@@ -25,10 +25,42 @@ function overlayAndBorder() {
     clickedThumbnail.classList.add('select-overlay');
 }
 
-
-
 const mainImageContainer = document.querySelector('.main-image-container');
+const closeGallery = document.querySelector('.close-gallery');
+const galleryModal = document.querySelector('.galleryModal');
+const body = document.querySelector('body');
 
-mainImageContainer.addEventListener('click', (e) => {
-    console.log(e.target.id);
+mainImageContainer.addEventListener('click', () => {
+    galleryModal.showModal();
+    body.style.overflow = 'hidden';
 });
+
+// closeGallery.addEventListener('click', () => {
+//     galleryModal.close();
+//     body.style.overflow = 'auto';
+// });
+
+window.addEventListener('keydown', (e) => {
+    if(e.key === 'Escape') {
+        body.style.overflow = 'auto';
+    };
+});
+
+const modalThumbnails = document.querySelectorAll('.modal-thumbnail-container');
+modalThumbnails.forEach((thumbnail) => thumbnail.addEventListener('click', changeImageModal));
+
+function changeImageModal(e) {
+    const imageMainModal = document.getElementById('modal-img-main');
+    const newMainModal = document.createElement('img');
+    
+    const modalImageId = e.target.parentElement.id;
+    newMainModal.src = `images/image-${modalImageId}.jpg`;
+
+    newMainModal.id = 'modal-img-main';
+
+    imageMainModal.parentNode.replaceChild(newMainModal, imageMainModal);
+
+    currentEvent = e;
+    overlayAndBorder();
+}
+
