@@ -26,22 +26,25 @@ function overlayAndBorder() {
 }
 
 const mainImageContainer = document.querySelector('.main-image-container');
-const closeGallery = document.querySelector('.close-gallery');
+const closeGallery = document.getElementById('close-modal');
 const galleryModal = document.querySelector('.galleryModal');
 const body = document.querySelector('body');
 
 mainImageContainer.addEventListener('click', () => {
-    galleryModal.showModal();
+    galleryModal.style.display = 'flex';
+    galleryModal.showModal();   
     body.style.overflow = 'hidden';
 });
 
-// closeGallery.addEventListener('click', () => {
-//     galleryModal.close();
-//     body.style.overflow = 'auto';
-// });
+closeGallery.addEventListener('click', () => {
+    galleryModal.style.display = 'none';
+    galleryModal.close();
+    body.style.overflow = 'auto';
+});
 
 window.addEventListener('keydown', (e) => {
     if(e.key === 'Escape') {
+        galleryModal.style.display = 'none';
         body.style.overflow = 'auto';
     };
 });
@@ -63,4 +66,3 @@ function changeImageModal(e) {
     currentEvent = e;
     overlayAndBorder();
 }
-
