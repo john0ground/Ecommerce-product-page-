@@ -56,6 +56,8 @@ nav {
 
 .user-section > img:hover {
     cursor: pointer;
+    border: 2px solid hsl(26, 100%, 55%);
+    border-radius: 50%;
 }
 
 #cartBtn {
@@ -63,6 +65,17 @@ nav {
     height: 2rem;
     border: none;
     background: transparent;
+    position: relative;
+}
+
+.cartNumberIcon {
+    padding: 0.1em 0.6em;
+    border-radius: 45%;
+    background: hsl(26, 100%, 55%);
+    color: white;
+    position: absolute;
+    top: -0.5em;
+    right: -0.5em;
 }
 
 #cartBtn:hover {
@@ -197,6 +210,22 @@ main {
     top: 50%;
     left:0;
     transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#previous:hover {
+    cursor: pointer;
+}
+
+#previous:hover #previous-icon {
+    stroke: hsl(26, 100%, 55%);
+}
+
+#previous-icon {
+    stroke: hsl(220, 13%, 13%);
+    fill: none;
 }
 
 #next {
@@ -208,6 +237,22 @@ main {
     right:0;
     top: 50%;
     transform: translate(50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#next:hover {
+    cursor: pointer;
+}
+
+#next:hover #next-icon {
+    stroke: hsl(26, 100%, 55%);
+}
+
+#next-icon {
+    stroke: hsl(220, 13%, 13%);
+    fill: none;
 }
 
 .modal-thumbnail-group {
@@ -291,7 +336,7 @@ main {
     border-radius: 10px;
 }
 
-#plus, #itemAmount, #minus {
+#plus, #product-num-display, #minus {
     height: 3rem;
     width: 3rem;
     display: flex;
@@ -301,7 +346,7 @@ main {
     background: none;
 }
 
-#itemAmount {
+#product-num-display {
     font-weight: 700;
 }
 
@@ -320,13 +365,28 @@ main {
     margin-left: 1rem;
 }
 
-#add-to-cart svg {
+.add-to-cart-icon {
     transform: scale(0.8);
 }
 
 #add-to-cart, #plus, #minus:hover {
     cursor: pointer;
 }
+
+.minus-icon, .plus-icon {
+    fill: hsl(26, 100%, 55%);
+}
+
+.add-to-cart-icon {
+    fill: white;
+}
+
+#minus:hover .minus-icon,
+#plus:hover .plus-icon,
+#add-to-cart:hover {
+    opacity: 0.7;
+}
+
 
 
 
