@@ -126,6 +126,8 @@ minus.addEventListener('click', () => {
 });
 
 addToCart.addEventListener('click', updateCart);
+const basketItemAmount = document.getElementById('basket-item-amount');
+const totalPrice = document.getElementById('total-price');
 
 let numberInCart = 0;
 function updateCart() {
@@ -139,9 +141,48 @@ function updateCart() {
         cartNumberIcon.textContent = numberInCart;
         
     } else cartNumberIcon.style.display = 'none';
+
+    basketItemAmount.textContent = numberInCart;
+    totalPrice.textContent = `$${numberInCart * 125}.00`;
 }
 
 const cartNumberIcon = document.createElement('div');
 cartNumberIcon.className = 'cartNumberIcon';
 
 const cartBtn = document.getElementById('cartBtn');
+const avatar = document.getElementById('avatar');
+const basketFilled = document.querySelector('.basket-filled');
+const basketEmpty = document.querySelector('.basket-empty');
+
+cartBtn.addEventListener('click', displayCart);
+avatar.addEventListener('click', displayCart);
+
+function displayCart() {
+    if (numberInCart === 0) {
+        basketFilled.style.display = 'none';
+        basketEmpty.style.display = 'flex';
+    } else {
+        basketEmpty.style.display = 'none';
+        basketFilled.style.display = 'block';
+    }
+}
+
+const deleteIcon = document.getElementById('delete');
+deleteIcon.addEventListener('click', () => {
+    basketFilled.style.display = 'none';
+    basketEmpty.style.display = 'flex';
+
+    numberInCart = 0;
+    cartNumberIcon.style.display = 'none';
+});
+
+document.body.addEventListener('click', (e) => {
+    if(e.target.id === 'cartBtn' || e.target.id === 'delete' || e.target.id === 'avatar' || e.target.id === 'checkout') return;
+    else {
+        basketEmpty.style.display = 'none';
+        basketFilled.style.display = 'none';
+    }
+});
+
+const checkout = document.getElementById('checkout');
+checkout.addEventListener('click', () => alert('Credit card declined'));
