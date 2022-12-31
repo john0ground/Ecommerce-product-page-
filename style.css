@@ -555,28 +555,14 @@ a {
     display: none;
 }
 
+#next-mobile, #previous-mobile {
+    display: none;
+}
+
 @media (max-width: 375px) {
     header {
         height: 4rem;
-        width: 100%;
-    }
-
-    nav {
-        position: absolute;
-        border: 1px solid #000;
-        position: absolute;
-        background-color: white;
-        margin: 0;
-        left: 0;
-        bottom: 0;
-        flex-direction: column;
-        align-items: flex-start;
-        width: 14rem;
-        z-index: 1;
-        color: hsl(220, 13%, 13%);
-        font-weight: bold;
-        padding: 1em;
-        display: none;
+        width: 100vw;
     }
 
     .menu {
@@ -597,9 +583,7 @@ a {
     #avatar {
         width: 1.8rem;
         height: 1.8rem;
-        padding: 1.5rem;
-        padding-right: 0;
-        margin-right: 0.5rem;
+        padding: 1.5rem;    
         border: none;
     }
 
@@ -621,7 +605,119 @@ a {
         border-radius: 0;
     }
 
+    #next-mobile {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+        background: white;
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #previous-mobile {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+        background: white;
+        position: absolute;
+        left: 1rem;
+        top: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        fill: none;
+    }
+
+    #next-icon-mobile, #previous-icon-mobile {
+        stroke: hsl(220, 13%, 13%);
+    }
+
     .thumbnail-group {
         display: none;
+    }
+
+
+    .product-container {
+        height: auto;
+        width: 100vw;
+    }
+
+    .info-container {
+        width: 100vw;
+        margin-top: 1.5rem;
+        padding: 0 1.5rem;
+        box-sizing: border-box;
+    }
+
+    .title {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .pricing {
+        display: flex;  
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .original-price {
+        width: 100%;
+        display: flex;
+        justify-content: right;
+        align-items: center;
+    }
+
+    .cart-section {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .chooseAmount {
+        margin: 0;
+        height: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    #add-to-cart {
+        height: 3rem;
+    }
+
+    footer {
+        font-size: 0.8rem;
+        height: 2rem;
+    }
+
+    .user-section {
+        position: static;
+    }
+
+    .basket-filled, 
+    .basket-empty {
+        top: 4.7rem;
+        left: .7rem;
+        border-radius: 10px;
+        z-index: 2;
+    }
+
+    nav {
+        position: absolute;
+        border: 1px solid #000;
+        background-color: white;
+        margin: 0;
+        left: 0;
+        top: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 14rem;
+        height: 100vh;
+        z-index: 1;
+        color: hsl(220, 13%, 13%);
+        font-weight: bold;
+        padding: 1em;
+        display: flex;
     }
 }

@@ -31,11 +31,13 @@ const closeGallery = document.getElementById('close-modal');
 const galleryModal = document.querySelector('.galleryModal');
 const body = document.querySelector('body');
 
-mainImageContainer.addEventListener('click', () => {
+mainImageContainer.addEventListener('click', displayModal);
+
+function displayModal() {
     galleryModal.style.display = 'flex';
     galleryModal.showModal();   
     body.style.overflow = 'hidden';
-});
+}
 
 closeGallery.addEventListener('click', () => {
     galleryModal.style.display = 'none';
@@ -186,3 +188,42 @@ document.body.addEventListener('click', (e) => {
 
 const checkout = document.getElementById('checkout');
 checkout.addEventListener('click', () => alert('Credit card declined'));
+
+
+if (window.innerWidth <= 375) {
+    mainImageContainer.removeEventListener('click', displayModal);
+}
+
+const previousMobile = document.getElementById('previous-mobile');
+const nextMobile = document.getElementById('next-mobile');
+
+nextMobile.addEventListener('click', nextImage);
+previousMobile.addEventListener('click', previousImage);
+
+function nextImage() {
+    if(currentThumbnailIndex === 3) return;
+    currentThumbnailIndex += 1;
+
+    const imageMain = document.getElementById('image-main');
+    const newMain = document.createElement('img');
+
+    newMain.src = `images/image-${thumbnailList[currentThumbnailIndex]}.jpg`;
+
+    newMain.id = 'image-main';
+
+    imageMain.parentNode.replaceChild(newMain, imageMain);
+}
+
+function previousImage() {
+    if(currentThumbnailIndex === 0) return;
+    currentThumbnailIndex -= 1;
+
+    const imageMain = document.getElementById('image-main');
+    const newMain = document.createElement('img');
+
+    newMain.src = `images/image-${thumbnailList[currentThumbnailIndex]}.jpg`;
+
+    newMain.id = 'image-main';
+
+    imageMain.parentNode.replaceChild(newMain, imageMain);
+}
