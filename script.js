@@ -227,3 +227,14 @@ function previousImage() {
 
     imageMain.parentNode.replaceChild(newMain, imageMain);
 }
+
+const menu = document.querySelector('.menu');
+const nav = document.querySelector('nav')
+menu.addEventListener('click', () => {
+    nav.style.left = '0';
+});
+
+const closeNavMobile = document.getElementById('close-nav-mobile');
+closeNavMobile.addEventListener('click', () => {
+    nav.style.left = '-15rem';
+});
