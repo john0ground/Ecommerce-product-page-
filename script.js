@@ -197,10 +197,10 @@ if (window.innerWidth <= 375) {
 const previousMobile = document.getElementById('previous-mobile');
 const nextMobile = document.getElementById('next-mobile');
 
-nextMobile.addEventListener('click', nextImage);
-previousMobile.addEventListener('click', previousImage);
+nextMobile.addEventListener('click', nextImageMobile);
+previousMobile.addEventListener('click', previousImageMobile);
 
-function nextImage() {
+function nextImageMobile() {
     if(currentThumbnailIndex === 3) return;
     currentThumbnailIndex += 1;
 
@@ -214,7 +214,7 @@ function nextImage() {
     imageMain.parentNode.replaceChild(newMain, imageMain);
 }
 
-function previousImage() {
+function previousImageMobile() {
     if(currentThumbnailIndex === 0) return;
     currentThumbnailIndex -= 1;
 
