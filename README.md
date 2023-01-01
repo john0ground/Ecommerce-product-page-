@@ -20,8 +20,8 @@ Users should be able to:
 
 ### Screenshot
 
-![screenshot-a](images/screenshot-e1)
-![screenshot-b](images/screenshot-e2)
+![screenshot-a](images/screenshot-e1.png)
+![screenshot-b](images/screenshot-e2.png)
 
 ### Links
 
